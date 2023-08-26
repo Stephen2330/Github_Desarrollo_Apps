@@ -1,0 +1,105 @@
+﻿@model Ventas_Vehiculos.Models.TBL_Usuario
+
+@{
+    ViewBag.Title = "Detalles usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="titulo_details">@ViewBag.Title</h2>
+
+<div>
+	<hr />
+	<dl class="dl-horizontal letra_search letra_tabla">
+
+
+		<dt class="titulo_details_tabla">
+			Cédula
+		</dt>
+
+		<dd>
+			
+				@Html.DisplayFor(model => model.TN_Cedula)
+		
+		</dd>
+
+		<dt class="titulo_details_tabla">
+			Nombre
+		</dt>
+
+		<dd>
+		
+				@Html.DisplayFor(model => model.TC_Nombre)
+		
+		</dd>
+
+		<dt class="titulo_details_tabla">
+			Primer apellido
+		</dt>
+
+		<dd>
+			
+				@Html.DisplayFor(model => model.TC_PrimerApellido)
+			
+		</dd>
+
+		<dt class="titulo_details_tabla">
+			Segundo apellido
+		</dt>
+
+		<dd>
+			
+				@Html.DisplayFor(model => model.TC_SegundoApellido)
+			
+		</dd>
+
+		<dt class="titulo_details_tabla">
+			Correo
+		</dt>
+
+		<dd>
+			
+				@Html.DisplayFor(model => model.TC_Correo)
+		
+		</dd>
+		<dt class="titulo_details_tabla">
+			Dirección
+		</dt>
+
+		<dd>
+			
+				@Html.DisplayFor(model => model.TC_Direccion)
+			
+		</dd>
+
+		<dt class="titulo_details_tabla">
+			Contraseña
+		</dt>
+
+		<dd>
+			
+				@Html.DisplayFor(model => model.TC_Clave)
+			
+		</dd>
+		<dt class="titulo_details_tabla">
+			Rol
+		</dt>
+
+		<dd>
+			
+				@Html.DisplayFor(model => model.TC_TipoUsuario)
+			
+		</dd>
+	</dl>
+</div>
+<p><b>
+	<a class="btn btn-secondary editar btn-separator" href="@Url.Action("Edit","Usuarios",  new { id = Model.TN_IdUsuario } )">
+		<i class="fa-solid fa-pen-to-square">
+
+		</i>
+		
+	</a>
+
+	<a class="btn btn-secondary estilo_boton_lista btn-separator" href="@Url.Action("Index", "Usuarios")">
+		<i class="fa fa-undo"></i>
+		
+	</a>
+</b></p>

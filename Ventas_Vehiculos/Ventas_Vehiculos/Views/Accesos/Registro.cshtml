@@ -1,0 +1,42 @@
+﻿
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="~/Content/Accesos.css" rel="stylesheet" />
+
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Registro de usuarios</title>
+</head>
+<body class="registro">
+	<br />
+
+	<div class="container">
+		<div class="wrapper  ">
+			<form   action="@Url.Action("Registro", "Accesos")" method="post" name="Login_Form" class="form-signin fondo_form letra_form">
+				<h3 class="form-signin-heading">Bienvenido a URBAN RIDE</h3>
+				<h2 class="form-signin-heading">Por favor, regístrese</h2>
+
+				<input type="text" class="form-control" name="TN_Cedula" placeholder="Ingrese cédula (sólo dígitos)" required autofocus="" />
+				<input type="text" class="form-control" name="TC_Nombre" placeholder="Ingrese nombre" required autofocus="" />
+				<input type="text" class="form-control" name="TC_PrimerApellido" placeholder="Ingrese primer apellido" required autofocus="" />
+				<input type="text" class="form-control" name="TC_SegundoApellido" placeholder="Ingrese segundo apellido" required autofocus="" />
+				<input type="text" class="form-control" name="TC_Correo" placeholder="Ingrese correo" required autofocus="" />
+				<input type="text" class="form-control" name="TC_Direccion" placeholder="Ingrese dirección" required autofocus="" />
+				<input type="password" class="form-control" name="TC_Clave" placeholder="Ingrese contraseña" required />
+				<input type="password" class="form-control" name="confirmar_clave" placeholder="Confirme contraseña" required />
+				<button style="margin-top: 10px; background-color: black; color: white; text-decoration: none" class="btn btn-lg  btn-block" name="Submit" value="Login" type="Submit">Registrar</button>
+				<a class="btn btn-lg btn-block" style="background-color: black; color: white;text-decoration:none" href="@Url.Action("Inicio_Sesion", "Accesos")">Inicio de sesión</a>
+			</form>
+		</div>
+	</div>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+</html>

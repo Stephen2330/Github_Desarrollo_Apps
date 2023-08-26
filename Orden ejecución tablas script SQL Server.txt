@@ -1,0 +1,11 @@
+Usuario
+Marca
+Modelo
+Capacidad
+Color
+Anno
+Motor
+Disenno
+Vehiculo
+Compra
+Factura

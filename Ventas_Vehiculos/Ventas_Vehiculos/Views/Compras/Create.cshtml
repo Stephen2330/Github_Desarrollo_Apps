@@ -1,0 +1,121 @@
+﻿@model Ventas_Vehiculos.Models.TBL_Compra
+
+@{
+	ViewBag.Title = "Nueva compra";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+<h2 class="titulo_create">@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal  letra_tabla letra_form">
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		<div class="form-group letra_search">
+			@Html.LabelFor(model => model.TN_IdVehiculo, "Número del vehículo", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownList("TN_IdVehiculo", null, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdVehiculo, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group letra_search">
+			@Html.LabelFor(model => model.TN_Cantidad, "Cantidad comprada", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TN_Cantidad, new { htmlAttributes = new { @class = "form-control", @required = true, @placeholder="Escribe cantidad" } })
+				@Html.ValidationMessageFor(model => model.TN_Cantidad, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group letra_search">
+			@Html.LabelFor(model => model.TN_IdMarca, "Marca", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownList("TN_IdMarca", null, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdMarca, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group letra_search">
+			@Html.LabelFor(model => model.TN_IdModelo, "Modelo", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownList("TN_IdModelo", null, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdModelo, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group letra_search">
+			@Html.LabelFor(model => model.TN_IdCapacidad, "Capacidad", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownList("TN_IdCapacidad", null, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdCapacidad, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group letra_search">
+			@Html.LabelFor(model => model.TN_IdColor, "Color", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownList("TN_IdColor", null, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdColor, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group letra_search">
+			@Html.LabelFor(model => model.TN_IdAnno, "Año", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownList("TN_IdAnno", null, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdAnno, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group letra_search">
+			@Html.LabelFor(model => model.TN_IdMotor, "Motor", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownList("TN_IdMotor", null, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdMotor, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group letra_search">
+			@Html.LabelFor(model => model.TN_IdDisenno, "Diseño del vehículo", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownList("TN_IdDisenno", null, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdDisenno, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group letra_search">
+			@Html.LabelFor(model => model.TBL_Usuario.TN_IdUsuario, "Cédula del cliente", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownList("TN_IdUsuario", null, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TBL_Usuario.TN_IdUsuario, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<button type="submit" class="btn btn-secondary btn_create">
+					<i class="fa fa-plus"></i>
+					
+				</button>
+
+			</div>
+		</div>
+	</div>
+}
+
+<div>
+	<a class="estilo_boton_lista btn btn-secondary" href="@Url.Action("Index", "Compras")">
+		<i class="fa fa-undo" aria-hidden="true"></i>
+		
+
+	</a>
+</div>
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}

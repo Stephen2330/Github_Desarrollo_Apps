@@ -1,0 +1,173 @@
+﻿@model Ventas_Vehiculos.Models.TBL_Factura
+
+@{
+	ViewBag.Title = "Actualizando factura";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="titulo_edit">@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{ 
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal letra_search letra_tabla letra_form">
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		@Html.HiddenFor(model => model.TN_IdFactura)
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.TN_IdVehiculo, "Número de vehículo", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+
+				@{
+					List<SelectListItem> vehiculosList = ViewBag.TN_IdVehiculo as List<SelectListItem>;
+
+				}
+
+				@Html.DropDownList("TN_IdVehiculo", vehiculosList, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdVehiculo, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.TN_IdUsuario, "Cédula de cliente", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+
+				@{
+					List<SelectListItem> usuariosList = ViewBag.TN_IdUsuario as List<SelectListItem>;
+
+				}
+
+
+				@Html.DropDownList("TN_IdUsuario", usuariosList, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdUsuario, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.TN_IdMarca, "Marca", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@{
+					List<SelectListItem> marcasList = ViewBag.TN_IdMarca as List<SelectListItem>;
+
+				}
+				@Html.DropDownList("TN_IdMarca", marcasList, new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdMarca, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.TN_IdModelo, "Modelo", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@{
+					List<SelectListItem> modelosList = ViewBag.TN_IdModelo as List<SelectListItem>;
+
+				}
+				@Html.DropDownList("TN_IdModelo", modelosList, new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdModelo, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.TN_IdCapacidad, "Capacidad", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@{
+					List<SelectListItem> capacidadesList = ViewBag.TN_IdCapacidad as List<SelectListItem>;
+
+				}
+
+				@Html.DropDownList("TN_IdCapacidad", capacidadesList, new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdCapacidad, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.TN_IdColor, "Color", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@{
+					List<SelectListItem> coloresList = ViewBag.TN_IdColor as List<SelectListItem>;
+
+				}
+
+
+				@Html.DropDownList("TN_IdColor", coloresList, new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdColor, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.TN_IdAnno, "Año", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@{
+					List<SelectListItem> annosList = ViewBag.TN_IdAnno as List<SelectListItem>;
+
+				}
+
+
+				@Html.DropDownList("TN_IdAnno", annosList, new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdAnno, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.TN_IdMotor, "Motor", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@{
+					List<SelectListItem> motoresList = ViewBag.TN_IdMotor as List<SelectListItem>;
+
+				}
+
+
+
+				@Html.DropDownList("TN_IdMotor", motoresList, new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdMotor, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.TN_IdDisenno, "Diseño del vehículo", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@{
+					List<SelectListItem> disennosList = ViewBag.TN_IdDisenno as List<SelectListItem>;
+
+				}
+
+
+				@Html.DropDownList("TN_IdDisenno", disennosList, new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdDisenno, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.TN_IdCompra, "Número de compra", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@{
+					List<SelectListItem> comprasList = ViewBag.TN_IdCompra as List<SelectListItem>;
+
+				}
+
+
+				@Html.DropDownList("TN_IdCompra", comprasList, new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TN_IdCompra, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<button type="submit" class="btn btn-secondary editar">
+					<i class="fa fa-refresh" aria-hidden="true"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+}
+
+<div>
+	<a class="btn btn-secondary estilo_boton_lista btn-separator" href="@Url.Action("Index", "Facturas")">
+		<i class="fa fa-undo"></i>
+	</a>
+</div>
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}

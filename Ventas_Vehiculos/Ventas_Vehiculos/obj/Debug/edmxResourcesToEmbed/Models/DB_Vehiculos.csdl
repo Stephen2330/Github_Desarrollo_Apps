@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_VehiculosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DB_VehiculosEntities3" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DB_VehiculosModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DB_VehiculosModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_RegistroUsuario">
+      <Parameter Name="cedula" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="apellido1" Mode="In" Type="String" />
+      <Parameter Name="apellido2" Mode="In" Type="String" />
+      <Parameter Name="direccion" Mode="In" Type="String" />
+      <Parameter Name="correo" Mode="In" Type="String" />
+      <Parameter Name="clave" Mode="In" Type="String" />
+      <Parameter Name="registrado" Mode="InOut" Type="Boolean" />
+      <Parameter Name="mensaje" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="SP_ValidarUsuario" ReturnType="Collection(Int32)">
+      <Parameter Name="correo" Mode="In" Type="String" />
+      <Parameter Name="clave" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="sysdiagrams" EntityType="DB_VehiculosModel.sysdiagrams" />
+    <EntitySet Name="TBL_Anno" EntityType="DB_VehiculosModel.TBL_Anno" />
+    <EntitySet Name="TBL_Capacidad" EntityType="DB_VehiculosModel.TBL_Capacidad" />
+    <EntitySet Name="TBL_Color" EntityType="DB_VehiculosModel.TBL_Color" />
+    <EntitySet Name="TBL_Compra" EntityType="DB_VehiculosModel.TBL_Compra" />
+    <EntitySet Name="TBL_Disenno" EntityType="DB_VehiculosModel.TBL_Disenno" />
+    <EntitySet Name="TBL_Factura" EntityType="DB_VehiculosModel.TBL_Factura" />
+    <EntitySet Name="TBL_Marca" EntityType="DB_VehiculosModel.TBL_Marca" />
+    <EntitySet Name="TBL_Modelo" EntityType="DB_VehiculosModel.TBL_Modelo" />
+    <EntitySet Name="TBL_Motor" EntityType="DB_VehiculosModel.TBL_Motor" />
+    <EntitySet Name="TBL_Usuario" EntityType="DB_VehiculosModel.TBL_Usuario" />
+    <EntitySet Name="TBL_Vehiculo" EntityType="DB_VehiculosModel.TBL_Vehiculo" />
+    <AssociationSet Name="FK_TBL_Compra_TBL_Anno" Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Anno">
+      <End Role="TBL_Anno" EntitySet="TBL_Anno" />
+      <End Role="TBL_Compra" EntitySet="TBL_Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Factura_TBL_Anno" Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Anno">
+      <End Role="TBL_Anno" EntitySet="TBL_Anno" />
+      <End Role="TBL_Factura" EntitySet="TBL_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Vehiculo_TBL_Anno" Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Anno">
+      <End Role="TBL_Anno" EntitySet="TBL_Anno" />
+      <End Role="TBL_Vehiculo" EntitySet="TBL_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Compra_TBL_Capacidad" Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Capacidad">
+      <End Role="TBL_Capacidad" EntitySet="TBL_Capacidad" />
+      <End Role="TBL_Compra" EntitySet="TBL_Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Factura_TBL_Capacidad" Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Capacidad">
+      <End Role="TBL_Capacidad" EntitySet="TBL_Capacidad" />
+      <End Role="TBL_Factura" EntitySet="TBL_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Vehiculo_TBL_Capacidad" Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Capacidad">
+      <End Role="TBL_Capacidad" EntitySet="TBL_Capacidad" />
+      <End Role="TBL_Vehiculo" EntitySet="TBL_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Compra_TBL_Color" Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Color">
+      <End Role="TBL_Color" EntitySet="TBL_Color" />
+      <End Role="TBL_Compra" EntitySet="TBL_Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Factura_TBL_Color" Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Color">
+      <End Role="TBL_Color" EntitySet="TBL_Color" />
+      <End Role="TBL_Factura" EntitySet="TBL_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Vehiculo_TBL_Color" Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Color">
+      <End Role="TBL_Color" EntitySet="TBL_Color" />
+      <End Role="TBL_Vehiculo" EntitySet="TBL_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Compra_TBL_Disenno" Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Disenno">
+      <End Role="TBL_Disenno" EntitySet="TBL_Disenno" />
+      <End Role="TBL_Compra" EntitySet="TBL_Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Compra_TBL_Marca" Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Marca">
+      <End Role="TBL_Marca" EntitySet="TBL_Marca" />
+      <End Role="TBL_Compra" EntitySet="TBL_Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Compra_TBL_Modelo" Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Modelo">
+      <End Role="TBL_Modelo" EntitySet="TBL_Modelo" />
+      <End Role="TBL_Compra" EntitySet="TBL_Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Compra_TBL_Motor" Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Motor">
+      <End Role="TBL_Motor" EntitySet="TBL_Motor" />
+      <End Role="TBL_Compra" EntitySet="TBL_Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Compra_TBL_Usuario" Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Usuario">
+      <End Role="TBL_Usuario" EntitySet="TBL_Usuario" />
+      <End Role="TBL_Compra" EntitySet="TBL_Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Compra_TBL_Usuario1" Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Usuario1">
+      <End Role="TBL_Usuario" EntitySet="TBL_Usuario" />
+      <End Role="TBL_Compra" EntitySet="TBL_Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Compra_TBL_Vehiculo" Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Vehiculo">
+      <End Role="TBL_Vehiculo" EntitySet="TBL_Vehiculo" />
+      <End Role="TBL_Compra" EntitySet="TBL_Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Factura_TBL_Compra" Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Compra">
+      <End Role="TBL_Compra" EntitySet="TBL_Compra" />
+      <End Role="TBL_Factura" EntitySet="TBL_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Factura_TBL_Disenno" Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Disenno">
+      <End Role="TBL_Disenno" EntitySet="TBL_Disenno" />
+      <End Role="TBL_Factura" EntitySet="TBL_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Vehiculo_TBL_Disenno" Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Disenno">
+      <End Role="TBL_Disenno" EntitySet="TBL_Disenno" />
+      <End Role="TBL_Vehiculo" EntitySet="TBL_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Factura_TBL_Marca" Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Marca">
+      <End Role="TBL_Marca" EntitySet="TBL_Marca" />
+      <End Role="TBL_Factura" EntitySet="TBL_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Factura_TBL_Modelo" Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Modelo">
+      <End Role="TBL_Modelo" EntitySet="TBL_Modelo" />
+      <End Role="TBL_Factura" EntitySet="TBL_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Factura_TBL_Motor" Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Motor">
+      <End Role="TBL_Motor" EntitySet="TBL_Motor" />
+      <End Role="TBL_Factura" EntitySet="TBL_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Factura_TBL_Usuario" Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Usuario">
+      <End Role="TBL_Usuario" EntitySet="TBL_Usuario" />
+      <End Role="TBL_Factura" EntitySet="TBL_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Factura_TBL_Vehiculo" Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Vehiculo">
+      <End Role="TBL_Vehiculo" EntitySet="TBL_Vehiculo" />
+      <End Role="TBL_Factura" EntitySet="TBL_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Vehiculo_TBL_Marca" Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Marca">
+      <End Role="TBL_Marca" EntitySet="TBL_Marca" />
+      <End Role="TBL_Vehiculo" EntitySet="TBL_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Vehiculo_TBL_Modelo" Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Modelo">
+      <End Role="TBL_Modelo" EntitySet="TBL_Modelo" />
+      <End Role="TBL_Vehiculo" EntitySet="TBL_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Vehiculo_TBL_Motor" Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Motor">
+      <End Role="TBL_Motor" EntitySet="TBL_Motor" />
+      <End Role="TBL_Vehiculo" EntitySet="TBL_Vehiculo" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TBL_Anno">
+    <Key>
+      <PropertyRef Name="TN_IdAnno" />
+    </Key>
+    <Property Name="TN_IdAnno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Compra" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Anno" FromRole="TBL_Anno" ToRole="TBL_Compra" />
+    <NavigationProperty Name="TBL_Factura" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Anno" FromRole="TBL_Anno" ToRole="TBL_Factura" />
+    <NavigationProperty Name="TBL_Vehiculo" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Anno" FromRole="TBL_Anno" ToRole="TBL_Vehiculo" />
+  </EntityType>
+  <EntityType Name="TBL_Capacidad">
+    <Key>
+      <PropertyRef Name="TN_IdCapacidad" />
+    </Key>
+    <Property Name="TN_IdCapacidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Compra" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Capacidad" FromRole="TBL_Capacidad" ToRole="TBL_Compra" />
+    <NavigationProperty Name="TBL_Factura" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Capacidad" FromRole="TBL_Capacidad" ToRole="TBL_Factura" />
+    <NavigationProperty Name="TBL_Vehiculo" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Capacidad" FromRole="TBL_Capacidad" ToRole="TBL_Vehiculo" />
+  </EntityType>
+  <EntityType Name="TBL_Color">
+    <Key>
+      <PropertyRef Name="TN_IdColor" />
+    </Key>
+    <Property Name="TN_IdColor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Compra" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Color" FromRole="TBL_Color" ToRole="TBL_Compra" />
+    <NavigationProperty Name="TBL_Factura" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Color" FromRole="TBL_Color" ToRole="TBL_Factura" />
+    <NavigationProperty Name="TBL_Vehiculo" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Color" FromRole="TBL_Color" ToRole="TBL_Vehiculo" />
+  </EntityType>
+  <EntityType Name="TBL_Compra">
+    <Key>
+      <PropertyRef Name="TN_IdCompra" />
+    </Key>
+    <Property Name="TN_IdCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TN_IdVehiculo" Type="Int32" Nullable="false" />
+    <Property Name="TN_Cantidad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TN_IdMarca" Type="Int32" />
+    <Property Name="TN_IdModelo" Type="Int32" />
+    <Property Name="TN_IdCapacidad" Type="Int32" />
+    <Property Name="TN_IdColor" Type="Int32" />
+    <Property Name="TN_IdAnno" Type="Int32" />
+    <Property Name="TN_IdMotor" Type="Int32" />
+    <Property Name="TN_IdDisenno" Type="Int32" />
+    <Property Name="TN_IdUsuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TBL_Anno" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Anno" FromRole="TBL_Compra" ToRole="TBL_Anno" />
+    <NavigationProperty Name="TBL_Capacidad" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Capacidad" FromRole="TBL_Compra" ToRole="TBL_Capacidad" />
+    <NavigationProperty Name="TBL_Color" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Color" FromRole="TBL_Compra" ToRole="TBL_Color" />
+    <NavigationProperty Name="TBL_Disenno" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Disenno" FromRole="TBL_Compra" ToRole="TBL_Disenno" />
+    <NavigationProperty Name="TBL_Marca" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Marca" FromRole="TBL_Compra" ToRole="TBL_Marca" />
+    <NavigationProperty Name="TBL_Modelo" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Modelo" FromRole="TBL_Compra" ToRole="TBL_Modelo" />
+    <NavigationProperty Name="TBL_Motor" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Motor" FromRole="TBL_Compra" ToRole="TBL_Motor" />
+    <NavigationProperty Name="TBL_Usuario" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Usuario" FromRole="TBL_Compra" ToRole="TBL_Usuario" />
+    <NavigationProperty Name="TBL_Usuario1" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Usuario1" FromRole="TBL_Compra" ToRole="TBL_Usuario" />
+    <NavigationProperty Name="TBL_Vehiculo" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Vehiculo" FromRole="TBL_Compra" ToRole="TBL_Vehiculo" />
+    <NavigationProperty Name="TBL_Factura" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Compra" FromRole="TBL_Compra" ToRole="TBL_Factura" />
+  </EntityType>
+  <EntityType Name="TBL_Disenno">
+    <Key>
+      <PropertyRef Name="TN_IdDisenno" />
+    </Key>
+    <Property Name="TN_IdDisenno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Compra" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Disenno" FromRole="TBL_Disenno" ToRole="TBL_Compra" />
+    <NavigationProperty Name="TBL_Factura" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Disenno" FromRole="TBL_Disenno" ToRole="TBL_Factura" />
+    <NavigationProperty Name="TBL_Vehiculo" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Disenno" FromRole="TBL_Disenno" ToRole="TBL_Vehiculo" />
+  </EntityType>
+  <EntityType Name="TBL_Factura">
+    <Key>
+      <PropertyRef Name="TN_IdFactura" />
+    </Key>
+    <Property Name="TN_IdFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TN_IdVehiculo" Type="Int32" Nullable="false" />
+    <Property Name="TN_IdUsuario" Type="Int32" Nullable="false" />
+    <Property Name="TN_IdMarca" Type="Int32" />
+    <Property Name="TN_IdModelo" Type="Int32" />
+    <Property Name="TN_IdCapacidad" Type="Int32" />
+    <Property Name="TN_IdColor" Type="Int32" />
+    <Property Name="TN_IdAnno" Type="Int32" />
+    <Property Name="TN_IdMotor" Type="Int32" />
+    <Property Name="TN_IdDisenno" Type="Int32" />
+    <Property Name="TN_IdCompra" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TBL_Anno" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Anno" FromRole="TBL_Factura" ToRole="TBL_Anno" />
+    <NavigationProperty Name="TBL_Capacidad" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Capacidad" FromRole="TBL_Factura" ToRole="TBL_Capacidad" />
+    <NavigationProperty Name="TBL_Color" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Color" FromRole="TBL_Factura" ToRole="TBL_Color" />
+    <NavigationProperty Name="TBL_Compra" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Compra" FromRole="TBL_Factura" ToRole="TBL_Compra" />
+    <NavigationProperty Name="TBL_Disenno" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Disenno" FromRole="TBL_Factura" ToRole="TBL_Disenno" />
+    <NavigationProperty Name="TBL_Marca" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Marca" FromRole="TBL_Factura" ToRole="TBL_Marca" />
+    <NavigationProperty Name="TBL_Modelo" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Modelo" FromRole="TBL_Factura" ToRole="TBL_Modelo" />
+    <NavigationProperty Name="TBL_Motor" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Motor" FromRole="TBL_Factura" ToRole="TBL_Motor" />
+    <NavigationProperty Name="TBL_Usuario" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Usuario" FromRole="TBL_Factura" ToRole="TBL_Usuario" />
+    <NavigationProperty Name="TBL_Vehiculo" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Vehiculo" FromRole="TBL_Factura" ToRole="TBL_Vehiculo" />
+  </EntityType>
+  <EntityType Name="TBL_Marca">
+    <Key>
+      <PropertyRef Name="TN_IdMarca" />
+    </Key>
+    <Property Name="TN_IdMarca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Compra" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Marca" FromRole="TBL_Marca" ToRole="TBL_Compra" />
+    <NavigationProperty Name="TBL_Factura" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Marca" FromRole="TBL_Marca" ToRole="TBL_Factura" />
+    <NavigationProperty Name="TBL_Vehiculo" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Marca" FromRole="TBL_Marca" ToRole="TBL_Vehiculo" />
+  </EntityType>
+  <EntityType Name="TBL_Modelo">
+    <Key>
+      <PropertyRef Name="TN_IdModelo" />
+    </Key>
+    <Property Name="TN_IdModelo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Compra" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Modelo" FromRole="TBL_Modelo" ToRole="TBL_Compra" />
+    <NavigationProperty Name="TBL_Factura" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Modelo" FromRole="TBL_Modelo" ToRole="TBL_Factura" />
+    <NavigationProperty Name="TBL_Vehiculo" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Modelo" FromRole="TBL_Modelo" ToRole="TBL_Vehiculo" />
+  </EntityType>
+  <EntityType Name="TBL_Motor">
+    <Key>
+      <PropertyRef Name="TN_IdMotor" />
+    </Key>
+    <Property Name="TN_IdMotor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Compra" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Motor" FromRole="TBL_Motor" ToRole="TBL_Compra" />
+    <NavigationProperty Name="TBL_Factura" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Motor" FromRole="TBL_Motor" ToRole="TBL_Factura" />
+    <NavigationProperty Name="TBL_Vehiculo" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Motor" FromRole="TBL_Motor" ToRole="TBL_Vehiculo" />
+  </EntityType>
+  <EntityType Name="TBL_Usuario">
+    <Key>
+      <PropertyRef Name="TN_IdUsuario" />
+    </Key>
+    <Property Name="TN_IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_TipoUsuario" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TN_Cedula" Type="Int32" Nullable="false" />
+    <Property Name="TC_Nombre" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TC_PrimerApellido" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TC_SegundoApellido" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TC_Correo" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TC_Direccion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TC_Clave" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Compra" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Usuario" FromRole="TBL_Usuario" ToRole="TBL_Compra" />
+    <NavigationProperty Name="TBL_Compra1" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Usuario1" FromRole="TBL_Usuario" ToRole="TBL_Compra" />
+    <NavigationProperty Name="TBL_Factura" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Usuario" FromRole="TBL_Usuario" ToRole="TBL_Factura" />
+  </EntityType>
+  <EntityType Name="TBL_Vehiculo">
+    <Key>
+      <PropertyRef Name="TN_IdVehiculo" />
+    </Key>
+    <Property Name="TN_IdVehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TN_IdMarca" Type="Int32" Nullable="false" />
+    <Property Name="TN_IdModelo" Type="Int32" Nullable="false" />
+    <Property Name="TN_IdColor" Type="Int32" Nullable="false" />
+    <Property Name="TN_IdAnno" Type="Int32" Nullable="false" />
+    <Property Name="TN_IdCapacidad" Type="Int32" Nullable="false" />
+    <Property Name="TN_IdMotor" Type="Int32" Nullable="false" />
+    <Property Name="TN_IdDisenno" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TBL_Anno" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Anno" FromRole="TBL_Vehiculo" ToRole="TBL_Anno" />
+    <NavigationProperty Name="TBL_Capacidad" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Capacidad" FromRole="TBL_Vehiculo" ToRole="TBL_Capacidad" />
+    <NavigationProperty Name="TBL_Color" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Color" FromRole="TBL_Vehiculo" ToRole="TBL_Color" />
+    <NavigationProperty Name="TBL_Compra" Relationship="DB_VehiculosModel.FK_TBL_Compra_TBL_Vehiculo" FromRole="TBL_Vehiculo" ToRole="TBL_Compra" />
+    <NavigationProperty Name="TBL_Disenno" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Disenno" FromRole="TBL_Vehiculo" ToRole="TBL_Disenno" />
+    <NavigationProperty Name="TBL_Factura" Relationship="DB_VehiculosModel.FK_TBL_Factura_TBL_Vehiculo" FromRole="TBL_Vehiculo" ToRole="TBL_Factura" />
+    <NavigationProperty Name="TBL_Marca" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Marca" FromRole="TBL_Vehiculo" ToRole="TBL_Marca" />
+    <NavigationProperty Name="TBL_Modelo" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Modelo" FromRole="TBL_Vehiculo" ToRole="TBL_Modelo" />
+    <NavigationProperty Name="TBL_Motor" Relationship="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Motor" FromRole="TBL_Vehiculo" ToRole="TBL_Motor" />
+  </EntityType>
+  <Association Name="FK_TBL_Compra_TBL_Anno">
+    <End Type="DB_VehiculosModel.TBL_Anno" Role="TBL_Anno" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Compra" Role="TBL_Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Anno">
+        <PropertyRef Name="TN_IdAnno" />
+      </Principal>
+      <Dependent Role="TBL_Compra">
+        <PropertyRef Name="TN_IdAnno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Factura_TBL_Anno">
+    <End Type="DB_VehiculosModel.TBL_Anno" Role="TBL_Anno" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Factura" Role="TBL_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Anno">
+        <PropertyRef Name="TN_IdAnno" />
+      </Principal>
+      <Dependent Role="TBL_Factura">
+        <PropertyRef Name="TN_IdAnno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Vehiculo_TBL_Anno">
+    <End Type="DB_VehiculosModel.TBL_Anno" Role="TBL_Anno" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Vehiculo" Role="TBL_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Anno">
+        <PropertyRef Name="TN_IdAnno" />
+      </Principal>
+      <Dependent Role="TBL_Vehiculo">
+        <PropertyRef Name="TN_IdAnno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Compra_TBL_Capacidad">
+    <End Type="DB_VehiculosModel.TBL_Capacidad" Role="TBL_Capacidad" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Compra" Role="TBL_Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Capacidad">
+        <PropertyRef Name="TN_IdCapacidad" />
+      </Principal>
+      <Dependent Role="TBL_Compra">
+        <PropertyRef Name="TN_IdCapacidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Factura_TBL_Capacidad">
+    <End Type="DB_VehiculosModel.TBL_Capacidad" Role="TBL_Capacidad" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Factura" Role="TBL_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Capacidad">
+        <PropertyRef Name="TN_IdCapacidad" />
+      </Principal>
+      <Dependent Role="TBL_Factura">
+        <PropertyRef Name="TN_IdCapacidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Vehiculo_TBL_Capacidad">
+    <End Type="DB_VehiculosModel.TBL_Capacidad" Role="TBL_Capacidad" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Vehiculo" Role="TBL_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Capacidad">
+        <PropertyRef Name="TN_IdCapacidad" />
+      </Principal>
+      <Dependent Role="TBL_Vehiculo">
+        <PropertyRef Name="TN_IdCapacidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Compra_TBL_Color">
+    <End Type="DB_VehiculosModel.TBL_Color" Role="TBL_Color" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Compra" Role="TBL_Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Color">
+        <PropertyRef Name="TN_IdColor" />
+      </Principal>
+      <Dependent Role="TBL_Compra">
+        <PropertyRef Name="TN_IdColor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Factura_TBL_Color">
+    <End Type="DB_VehiculosModel.TBL_Color" Role="TBL_Color" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Factura" Role="TBL_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Color">
+        <PropertyRef Name="TN_IdColor" />
+      </Principal>
+      <Dependent Role="TBL_Factura">
+        <PropertyRef Name="TN_IdColor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Vehiculo_TBL_Color">
+    <End Type="DB_VehiculosModel.TBL_Color" Role="TBL_Color" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Vehiculo" Role="TBL_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Color">
+        <PropertyRef Name="TN_IdColor" />
+      </Principal>
+      <Dependent Role="TBL_Vehiculo">
+        <PropertyRef Name="TN_IdColor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Compra_TBL_Disenno">
+    <End Type="DB_VehiculosModel.TBL_Disenno" Role="TBL_Disenno" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Compra" Role="TBL_Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Disenno">
+        <PropertyRef Name="TN_IdDisenno" />
+      </Principal>
+      <Dependent Role="TBL_Compra">
+        <PropertyRef Name="TN_IdDisenno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Compra_TBL_Marca">
+    <End Type="DB_VehiculosModel.TBL_Marca" Role="TBL_Marca" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Compra" Role="TBL_Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Marca">
+        <PropertyRef Name="TN_IdMarca" />
+      </Principal>
+      <Dependent Role="TBL_Compra">
+        <PropertyRef Name="TN_IdMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Compra_TBL_Modelo">
+    <End Type="DB_VehiculosModel.TBL_Modelo" Role="TBL_Modelo" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Compra" Role="TBL_Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Modelo">
+        <PropertyRef Name="TN_IdModelo" />
+      </Principal>
+      <Dependent Role="TBL_Compra">
+        <PropertyRef Name="TN_IdModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Compra_TBL_Motor">
+    <End Type="DB_VehiculosModel.TBL_Motor" Role="TBL_Motor" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Compra" Role="TBL_Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Motor">
+        <PropertyRef Name="TN_IdMotor" />
+      </Principal>
+      <Dependent Role="TBL_Compra">
+        <PropertyRef Name="TN_IdMotor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Compra_TBL_Usuario">
+    <End Type="DB_VehiculosModel.TBL_Usuario" Role="TBL_Usuario" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Compra" Role="TBL_Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Usuario">
+        <PropertyRef Name="TN_IdUsuario" />
+      </Principal>
+      <Dependent Role="TBL_Compra">
+        <PropertyRef Name="TN_IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Compra_TBL_Usuario1">
+    <End Type="DB_VehiculosModel.TBL_Usuario" Role="TBL_Usuario" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Compra" Role="TBL_Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Usuario">
+        <PropertyRef Name="TN_IdUsuario" />
+      </Principal>
+      <Dependent Role="TBL_Compra">
+        <PropertyRef Name="TN_IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Compra_TBL_Vehiculo">
+    <End Type="DB_VehiculosModel.TBL_Vehiculo" Role="TBL_Vehiculo" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Compra" Role="TBL_Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Vehiculo">
+        <PropertyRef Name="TN_IdVehiculo" />
+      </Principal>
+      <Dependent Role="TBL_Compra">
+        <PropertyRef Name="TN_IdVehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Factura_TBL_Compra">
+    <End Type="DB_VehiculosModel.TBL_Compra" Role="TBL_Compra" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Factura" Role="TBL_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Compra">
+        <PropertyRef Name="TN_IdCompra" />
+      </Principal>
+      <Dependent Role="TBL_Factura">
+        <PropertyRef Name="TN_IdCompra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Factura_TBL_Disenno">
+    <End Type="DB_VehiculosModel.TBL_Disenno" Role="TBL_Disenno" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Factura" Role="TBL_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Disenno">
+        <PropertyRef Name="TN_IdDisenno" />
+      </Principal>
+      <Dependent Role="TBL_Factura">
+        <PropertyRef Name="TN_IdDisenno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Vehiculo_TBL_Disenno">
+    <End Type="DB_VehiculosModel.TBL_Disenno" Role="TBL_Disenno" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Vehiculo" Role="TBL_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Disenno">
+        <PropertyRef Name="TN_IdDisenno" />
+      </Principal>
+      <Dependent Role="TBL_Vehiculo">
+        <PropertyRef Name="TN_IdDisenno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Factura_TBL_Marca">
+    <End Type="DB_VehiculosModel.TBL_Marca" Role="TBL_Marca" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Factura" Role="TBL_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Marca">
+        <PropertyRef Name="TN_IdMarca" />
+      </Principal>
+      <Dependent Role="TBL_Factura">
+        <PropertyRef Name="TN_IdMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Factura_TBL_Modelo">
+    <End Type="DB_VehiculosModel.TBL_Modelo" Role="TBL_Modelo" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Factura" Role="TBL_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Modelo">
+        <PropertyRef Name="TN_IdModelo" />
+      </Principal>
+      <Dependent Role="TBL_Factura">
+        <PropertyRef Name="TN_IdModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Factura_TBL_Motor">
+    <End Type="DB_VehiculosModel.TBL_Motor" Role="TBL_Motor" Multiplicity="0..1" />
+    <End Type="DB_VehiculosModel.TBL_Factura" Role="TBL_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Motor">
+        <PropertyRef Name="TN_IdMotor" />
+      </Principal>
+      <Dependent Role="TBL_Factura">
+        <PropertyRef Name="TN_IdMotor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Factura_TBL_Usuario">
+    <End Type="DB_VehiculosModel.TBL_Usuario" Role="TBL_Usuario" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Factura" Role="TBL_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Usuario">
+        <PropertyRef Name="TN_IdUsuario" />
+      </Principal>
+      <Dependent Role="TBL_Factura">
+        <PropertyRef Name="TN_IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Factura_TBL_Vehiculo">
+    <End Type="DB_VehiculosModel.TBL_Vehiculo" Role="TBL_Vehiculo" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Factura" Role="TBL_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Vehiculo">
+        <PropertyRef Name="TN_IdVehiculo" />
+      </Principal>
+      <Dependent Role="TBL_Factura">
+        <PropertyRef Name="TN_IdVehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Vehiculo_TBL_Marca">
+    <End Type="DB_VehiculosModel.TBL_Marca" Role="TBL_Marca" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Vehiculo" Role="TBL_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Marca">
+        <PropertyRef Name="TN_IdMarca" />
+      </Principal>
+      <Dependent Role="TBL_Vehiculo">
+        <PropertyRef Name="TN_IdMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Vehiculo_TBL_Modelo">
+    <End Type="DB_VehiculosModel.TBL_Modelo" Role="TBL_Modelo" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Vehiculo" Role="TBL_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Modelo">
+        <PropertyRef Name="TN_IdModelo" />
+      </Principal>
+      <Dependent Role="TBL_Vehiculo">
+        <PropertyRef Name="TN_IdModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Vehiculo_TBL_Motor">
+    <End Type="DB_VehiculosModel.TBL_Motor" Role="TBL_Motor" Multiplicity="1" />
+    <End Type="DB_VehiculosModel.TBL_Vehiculo" Role="TBL_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Motor">
+        <PropertyRef Name="TN_IdMotor" />
+      </Principal>
+      <Dependent Role="TBL_Vehiculo">
+        <PropertyRef Name="TN_IdMotor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

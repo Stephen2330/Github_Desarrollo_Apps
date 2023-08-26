@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9de9cd9df58b4e428c0b7f011326b1b9" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_VehiculosModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_VehiculosModel.TBL_Anno" Width="1.5" PointX="0.75" PointY="18.375" />
+        <EntityTypeShape EntityType="DB_VehiculosModel.TBL_Capacidad" Width="1.5" PointX="0.75" PointY="21" />
+        <EntityTypeShape EntityType="DB_VehiculosModel.TBL_Color" Width="1.5" PointX="0.75" PointY="29.25" />
+        <EntityTypeShape EntityType="DB_VehiculosModel.TBL_Compra" Width="1.5" PointX="3" PointY="3.875" />
+        <EntityTypeShape EntityType="DB_VehiculosModel.TBL_Disenno" Width="1.5" PointX="0.75" PointY="26.5" />
+        <EntityTypeShape EntityType="DB_VehiculosModel.TBL_Factura" Width="1.5" PointX="8.25" PointY="4" />
+        <EntityTypeShape EntityType="DB_VehiculosModel.TBL_Marca" Width="1.5" PointX="0.75" PointY="5.5" />
+        <EntityTypeShape EntityType="DB_VehiculosModel.TBL_Modelo" Width="1.5" PointX="0.75" PointY="23.75" />
+        <EntityTypeShape EntityType="DB_VehiculosModel.TBL_Motor" Width="1.5" PointX="0.75" PointY="11.5" />
+        <EntityTypeShape EntityType="DB_VehiculosModel.TBL_Usuario" Width="1.5" PointX="0.75" PointY="14.25" />
+        <EntityTypeShape EntityType="DB_VehiculosModel.TBL_Vehiculo" Width="1.5" PointX="6" PointY="4.375" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Anno" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Anno" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Anno" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Capacidad" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Capacidad" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Capacidad" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Color" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Color" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Color" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Disenno" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Marca" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Modelo" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Motor" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Usuario" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Usuario1" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Compra_TBL_Vehiculo" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Compra" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Disenno" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Disenno" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Marca" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Modelo" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Motor" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Usuario" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Factura_TBL_Vehiculo" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Marca" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Modelo" />
+        <AssociationConnector Association="DB_VehiculosModel.FK_TBL_Vehiculo_TBL_Motor" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

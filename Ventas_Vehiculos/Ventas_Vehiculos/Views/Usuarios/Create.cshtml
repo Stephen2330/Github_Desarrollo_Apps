@@ -1,0 +1,102 @@
+﻿@model Ventas_Vehiculos.Models.TBL_Usuario
+
+@{
+	ViewBag.Title = "Nuevo usuario";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+<h2 class="titulo_create">@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal letra_tabla letra_search letra_form">
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+		<div class="form-group titulo_details_tabla">
+			@Html.LabelFor(model => model.TN_Cedula, "Cédula", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TN_Cedula, new { htmlAttributes = new { @class = "form-control", placeholder = "Escribe dígitos cédula", @required = true } })
+				@Html.ValidationMessageFor(model => model.TN_Cedula, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group titulo_details_tabla">
+			@Html.LabelFor(model => model.TC_Nombre, "Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_Nombre, new { htmlAttributes = new { @class = "form-control", placeholder = "Escribe nombre", @required = true } })
+				@Html.ValidationMessageFor(model => model.TC_Nombre, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group titulo_details_tabla">
+			@Html.LabelFor(model => model.TC_PrimerApellido, "Primer apellido", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_PrimerApellido, new { htmlAttributes = new { @class = "form-control", placeholder = "Escribe primer apellido", @required = true } })
+				@Html.ValidationMessageFor(model => model.TC_PrimerApellido, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group titulo_details_tabla">
+			@Html.LabelFor(model => model.TC_SegundoApellido, "Segundo apellido", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_SegundoApellido, new { htmlAttributes = new { @class = "form-control", placeholder = "Escribe segundo apellido", @required = true } })
+				@Html.ValidationMessageFor(model => model.TC_SegundoApellido, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group titulo_details_tabla">
+			@Html.LabelFor(model => model.TC_Correo, "Correo", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_Correo, new { htmlAttributes = new { @class = "form-control", placeholder = "Escribe correo", @required = true } })
+				@Html.ValidationMessageFor(model => model.TC_Correo, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group titulo_details_tabla">
+			@Html.LabelFor(model => model.TC_Direccion, "Dirección", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_Direccion, new { htmlAttributes = new { @class = "form-control", placeholder = "Escribe ubicación", @required = true } })
+				@Html.ValidationMessageFor(model => model.TC_Direccion, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group titulo_details_tabla">
+			@Html.LabelFor(model => model.TC_Clave, "Contraseña", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_Clave, new { htmlAttributes = new { @class = "form-control", placeholder = "Escribe contraseña", type = "password", @required = true } })
+				@Html.ValidationMessageFor(model => model.TC_Clave, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<div class="form-group titulo_details_tabla">
+			@Html.LabelFor(model => model.TC_TipoUsuario, "Rol", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_TipoUsuario, new { htmlAttributes = new { @class = "form-control", placeholder = "Escribe rol", @required = true } })
+				@Html.ValidationMessageFor(model => model.TC_TipoUsuario, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group ">
+			<div class="col-md-offset-2 col-md-10">
+				<button type="submit" class="btn btn-secondary btn_create">
+					<i class="fa fa-plus"></i>
+					
+				</button>
+
+
+			</div>
+		</div>
+	</div>
+}
+
+<div>
+	<a class="estilo_boton_lista btn btn-secondary" href="@Url.Action("Index", "Usuarios")">
+		<i class="fa fa-undo" aria-hidden="true"></i>
+		
+
+	</a>
+</div>

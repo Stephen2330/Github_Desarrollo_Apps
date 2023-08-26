@@ -1,0 +1,113 @@
+﻿@model Ventas_Vehiculos.Models.TBL_Vehiculo
+
+@{
+	ViewBag.Title = "Nuevo vehículo";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+<h2 class="titulo_create">@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+<div class="form-horizontal letra_tabla letra_form">
+	<hr />
+	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+	<div class="form-group letra_search">
+		@Html.LabelFor(model => model.TN_IdMarca, "Marca", htmlAttributes: new { @class = "control-label col-md-2" })
+		<div class="col-md-10">
+			@{
+				// Obtener la lista de elementos para el dropdown TN_IdMarca
+				List<SelectListItem> marcasList = ViewBag.TN_IdMarca as List<SelectListItem>;
+
+			}
+
+			@Html.DropDownList("TN_IdMarca", marcasList, htmlAttributes: new { @class = "form-control" })
+			@Html.ValidationMessageFor(model => model.TN_IdMarca, "", new { @class = "text-danger" })
+		</div>
+	</div>
+	<div class="form-group letra_search">
+		@Html.LabelFor(model => model.TN_IdModelo, "Modelo", htmlAttributes: new { @class = "control-label col-md-2" })
+		<div class="col-md-10">
+			@{
+				List<SelectListItem> modelosList = ViewBag.TN_IdModelo as List<SelectListItem>;
+			}
+			@Html.DropDownList("TN_IdModelo", modelosList, htmlAttributes: new { @class = "form-control" })
+			@Html.ValidationMessageFor(model => model.TN_IdModelo, "", new { @class = "text-danger" })
+		</div>
+	</div>
+
+	<div class="form-group letra_search">
+		@Html.LabelFor(model => model.TN_IdCapacidad, "Capacidad", htmlAttributes: new { @class = "control-label col-md-2" })
+		<div class="col-md-10">
+			@{
+				List<SelectListItem> capacidadesList = ViewBag.TN_IdCapacidad as List<SelectListItem>;
+			}
+			@Html.DropDownList("TN_IdCapacidad", capacidadesList, htmlAttributes: new { @class = "form-control" })
+			@Html.ValidationMessageFor(model => model.TN_IdCapacidad, "", new { @class = "text-danger" })
+		</div>
+	</div>
+
+	<div class="form-group letra_search">
+		@Html.LabelFor(model => model.TN_IdColor, "Color", htmlAttributes: new { @class = "control-label col-md-2" })
+		<div class="col-md-10">
+			@{
+				List<SelectListItem> coloresList = ViewBag.TN_IdColor as List<SelectListItem>;
+			}
+			@Html.DropDownList("TN_IdColor", coloresList, htmlAttributes: new { @class = "form-control" })
+			@Html.ValidationMessageFor(model => model.TN_IdColor, "", new { @class = "text-danger" })
+		</div>
+	</div>
+
+	<div class="form-group letra_search">
+		@Html.LabelFor(model => model.TN_IdAnno, "Año", htmlAttributes: new { @class = "control-label col-md-2" })
+		<div class="col-md-10">
+			@{
+				List<SelectListItem> annosList = ViewBag.TN_IdAnno as List<SelectListItem>;
+			}
+			@Html.DropDownList("TN_IdAnno", annosList, htmlAttributes: new { @class = "form-control" })
+			@Html.ValidationMessageFor(model => model.TN_IdAnno, "", new { @class = "text-danger" })
+		</div>
+	</div>
+
+	<div class="form-group letra_search">
+		@Html.LabelFor(model => model.TN_IdMotor, "Motor", htmlAttributes: new { @class = "control-label col-md-2" })
+		<div class="col-md-10">
+			@{
+				List<SelectListItem> motoresList = ViewBag.TN_IdMotor as List<SelectListItem>;
+			}
+			@Html.DropDownList("TN_IdMotor", motoresList, htmlAttributes: new { @class = "form-control" })
+			@Html.ValidationMessageFor(model => model.TN_IdMotor, "", new { @class = "text-danger" })
+		</div>
+	</div>
+
+	<div class="form-group letra_search">
+		@Html.LabelFor(model => model.TN_IdDisenno, "Diseño", htmlAttributes: new { @class = "control-label col-md-2" })
+		<div class="col-md-10">
+			@{
+				List<SelectListItem> disennosList = ViewBag.TN_IdDisenno as List<SelectListItem>;
+			}
+			@Html.DropDownList("TN_IdDisenno", disennosList, htmlAttributes: new { @class = "form-control" })
+			@Html.ValidationMessageFor(model => model.TN_IdDisenno, "", new { @class = "text-danger" })
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<button type="submit" class="btn btn-secondary btn_create">
+				<i class="fa fa-plus"></i>
+
+			</button>
+		</div>
+	</div>
+</div>
+}
+
+<div>
+	<a class="estilo_boton_lista btn btn-secondary" href="@Url.Action("Index", "Vehiculos")">
+		<i class="fa fa-undo" aria-hidden="true"></i>
+		
+
+	</a>
+</div>

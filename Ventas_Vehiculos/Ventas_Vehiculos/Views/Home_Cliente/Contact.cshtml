@@ -1,0 +1,44 @@
+﻿@{
+	ViewBag.Title = "Contacto";
+	Layout = "~/Views/Shared/_LayoutCliente.cshtml";
+}
+<h2  class="titulo_contact">@ViewBag.Title</h2>
+
+<address  class="letra_address">
+	León XIII <br />
+	Redmond, WA 98052-6399<br />
+	Teléfono: +1 (234) 567-8901 <br />
+</address>
+
+
+<address class="letra_address">
+    <strong>Soporte:</strong>   <a href="mailto:Support@example.com">soporte_tecnico@urbanride.com</a><br />
+</address>
+
+<table>
+	<tr>
+		<td>
+			<a href="http://www.facebook.com" class="siguenos">
+				<i class="fab fa-facebook-f img_icon margenes-entre-img"></i>
+			</a>
+		</td>
+		<td>
+			<a href="http://www.instagram.com" class="siguenos">
+				<i class="fab fa-instagram img_icon margenes-entre-img"></i>
+			</a>
+		</td>
+		<td>
+			<a href="http://www.twitter.com" class="siguenos">
+				<i class="fab fa-twitter img_icon margenes-entre-img"></i>
+			</a>
+		</td>
+	</tr>
+</table>
+
+<div>
+	<a class="estilo_boton_lista btn btn-secondary" href="@Url.Action("Index", "Home_Cliente")">
+		<i class="fa fa-undo" aria-hidden="true"></i>
+
+
+	</a>
+</div>

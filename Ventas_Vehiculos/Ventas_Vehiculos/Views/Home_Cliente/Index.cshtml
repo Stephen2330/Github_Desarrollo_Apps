@@ -1,0 +1,71 @@
+﻿@{
+	ViewBag.Title = "Inicio";
+	Layout = "~/Views/Shared/_LayoutCliente.cshtml";
+
+}
+
+<div class="jumbotron letra_layout">
+
+	<p class="lead index_home">
+
+		<b class="titulo_home">
+			¿Por qué URBAN RIDE?
+		</b>
+		<br />
+		<b class="subtitulo_home">
+			Proyecto visionario inspirado en la naturaleza, el arte y la pasión humana por los vehículos
+		</b>
+	</p>
+	<p class="index_informacion">
+		<b>
+			Para saber más, dirígase al botón que se encuentra debajo.
+		</b>
+		<br />
+		<a class="btn btn-secondary btn_about" href="@Url.Action("About", "Home_Cliente")">
+			<i class="fa-solid fa-users"></i>
+
+		</a>
+	</p>
+</div>
+
+
+<hr style="border:inset" />
+<img id="banner" src="~/Content/img/img5.png" />
+<hr style="border:inset" />
+
+<div class="row letra_layout color_letra_layout" >
+	<div class="col-md-4">
+		<img src="~/Content/img/img10.png" width="350" height="250" style="gap:10px" />
+		<h2 class="titulo_seccion_index">Soporte técnico o servicio al cliente</h2>
+		<p class="tam_letra_seccion">
+			Si tiene dificultades o necesita ayuda, en la sección que se encuentra debajo puede contactar a soporte.
+		</p>
+		<p class="tam_letra_seccion">
+			Contacte a soporte técnico con el botón debajo.
+			<br />
+			<b>
+				<a class="btn btn-secondary btn_contact" href="@Url.Action("Contact", "Home_Cliente")">
+					<i class="fa fa-phone" aria-hidden="true"></i>
+
+				</a>
+
+			</b>
+		</p>
+	</div>
+	<div class="col-md-4">
+		<img src="~/Content/img/img7.png" width="350" height="250" />
+		<h2 class="titulo_seccion_index">¿Por qué URBAN RIDE es su mejor elección?</h2>
+		<p class="tam_letra_seccion">Es la opción definitiva para satisfacer todas sus necesidades automotrices. Con una experiencia sólida en la industria y un equipo apasionado, se brinda un servicio al cliente excepcional y una experiencia de compra sin igual. La amplia selección de vehículos de las mejores marcas, junto con precios altamente competitivos y ofertas especiales, garantizan que encontrará el vehículo perfecto que se adapte a su estilo de vida y presupuesto. 
+		</p>
+	</div>
+	<div class="col-md-4">
+		<img src="~/Content/img/img9.png" width="350" height="250" />
+		<h2 class="titulo_seccion_index">Asesoramiento y orientación</h2>
+		<p class="tam_letra_seccion">
+			Se cree en la preocupación profunda de los clientes y  tomar una decisión informada es fundamental al adquirir un vehículo. El equipo de expertos en movilidad automotriz está altamente capacitado para brindarle un asesoramiento personalizado y orientación detallada en cada etapa del proceso de compra.  
+		</p>
+	</div>
+
+
+
+</div>

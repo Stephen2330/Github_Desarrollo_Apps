@@ -1,0 +1,464 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+}
+
+.fondo_bi {
+background-color:dimgray;
+
+}
+
+.btn_contact {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #304FFE;
+    color: white;
+    gap: 10px;
+    box-shadow: 3px 3px 3px #bdc3c7;
+}
+.seccion_about {
+    font-family: 'Chivo', sans-serif;
+    color:black;
+    font-size:20px;
+}
+
+.titulo_home {
+    display:grid;
+    place-items:center;
+    font-family:Barlow;
+    font-size:29px;
+    color:orangered;
+
+}
+
+.letra_address {
+    font-family: 'Chivo', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+.titulo_contact {
+    font-family: Barlow;
+    color: orangered;
+}
+
+.titulo_about {
+    color: orangered;
+    font-family: Barlow;
+}
+
+.btn_about {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #e17055;
+    color: white;
+    gap: 10px;
+    box-shadow: 3px 3px 3px #bdc3c7;
+}
+
+.index_informacion {
+    font-family:'Chivo', sans-serif;
+    font-size:25px;
+    color: black;
+
+}
+
+.subtitulo_home {
+font-family:'Chivo', sans-serif;
+
+}
+
+.index_home {
+    color: black;
+}
+
+.fondo_tabla {
+background-color:black;
+}
+
+
+.letra_tabla {
+    color: black;
+}
+
+.fondo_inicio {
+    background-color:lightgray;
+
+}
+
+.texto_blanco {
+color:white;
+
+
+}
+
+.btn-separator {
+    margin-right: 10px; /* Ajusta el valor según lo necesites */
+}
+
+.bg-dark {
+background-color: #101010;
+
+}
+
+.menu_drop {
+    background-color: black;
+    color: #ffffff;
+}
+
+.color_navbar_header {
+    background-color:black;
+
+}
+
+
+.tam_letra_seccion {
+    font-size: 18px;
+}
+
+.color_letra_layout {
+    color: black;
+}
+
+.titulo_seccion_index {
+    display:grid;
+    place-items:center;
+    font-family:Barlow;
+    color:orangered;
+
+}
+
+.letra_layout {
+    font-family: 'Chivo', sans-serif;
+}
+
+.margenes-entre-img {
+margin: 10px 10px 10px 10px;
+
+}
+
+
+.img_icon {
+    font-size:25px;
+width:50px;
+height:50px;
+
+}
+
+
+
+.siguenos {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+}
+
+.th_centrado {
+text-align:center;
+
+}
+
+.editar {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #c395b6; /* Lila pastel ligeramente más oscuro */
+    color: white;
+    gap: 10px;
+    box-shadow: 3px 3px 3px #c395b6;
+}
+
+
+.titulo_index {
+    font-family:Barlow;
+    font-size:35px;
+    color: orangered;
+}
+
+
+
+ul.pagination li a {
+    margin: 0; /* 0 is for top and bottom. Feel free to change it */
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+}
+
+
+
+
+.letra_details {
+    font-family: 'Averia Libre';
+    font-size:20px;
+}
+
+
+.datos_paginacion {
+    color: black;
+    background-color: #c5c6c8;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Rubik', sans-serif;
+    border-radius: 5px;
+    margin: 0px 0px 0px 0px;
+    font-weight: bold;
+}
+
+
+.detalles_encabezado_tabla {
+    background-color:black;
+    color:white;
+    gap: 2px;
+}
+
+.detalles_datos_tabla {
+    background-color: #c5c6c8;
+    color: black;
+    font-weight: bold;
+}
+
+.titulo_details {
+    font-family: Barlow;
+    font-size: 35px;
+    color: orangered;
+}
+
+
+.btn_create {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #967bb6; /* Lila pastel más oscuro */
+    box-shadow: 3px 3px 3px #967bb6;
+    color: ghostwhite;
+}
+
+
+.btn_add {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #77dd77;
+    box-shadow: 3px 3px 3px #77dd77;
+    color: ghostwhite;
+}
+
+.texto_create {
+color:black;
+}
+
+.estilo_boton_agregar {
+    background-color: black;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.fondo_tabla {
+    background-color: #9b9b9b;
+}
+
+.footer {
+text-align: center;
+
+}
+
+
+
+.datos_tabla {
+    background-color: #c5c6c8;
+    color: black;
+    font-family: 'Chivo', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.titulo_details_tabla {
+    font-family: 'Chivo',sans-serif;
+    font-weight:bold;
+}
+
+.titulo_encabezado_tabla {
+    background-color: black;
+    text-align: center;
+    font-family: 'Chivo', sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+
+
+
+.cuadro_tabla {
+    
+    background-color:#9b9b9b;
+    text-align:center;
+}
+
+
+.titulo_tabla {
+    font-weight: bold;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #9b9b9b;
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+    .btn-icon .fa {
+        margin-right: 5px;
+    }
+
+
+.btn_clean {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #e06666; /* Un tono suave de rojo pastel más oscuro */
+    box-shadow: 3px 3px 3px #e06666;
+    color: white;
+}
+
+
+
+
+.btn_search {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #6ca0a3; /* Un tono suave de azul verdoso pastel */
+    box-shadow: 3px 3px 3px #6ca0a3;
+    color: white;
+}
+
+
+.estilo_boton_lista {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #ff6961;
+    box-shadow: 3px 3px 3px #ff6961;
+    color: white;
+}
+
+.btn_edit {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #77dd77;
+    color: white;
+    box-shadow: 3px 3px 3px #77dd77;
+    margin-bottom: 10px;
+}
+
+.btn_update {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #e2e37e;
+    color: white;
+    box-shadow: 3px 3px 3px #e2e37e;
+    margin-bottom: 10px;
+}
+
+
+.letra_search {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+
+.titulo_edit {
+    font-family: Barlow;
+    font-size: 35px;
+    color: orangered;
+}
+
+.titulo_create {
+    font-family: Barlow;
+    font-size: 35px;
+    color: orangered;
+}
+
+.detallado {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #ffb347;
+    color: white;
+    box-shadow: 3px 3px 3px #ffb347;
+}
+
+    .editar>a {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+.detallado > a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+   
+
+#banner {
+    width: 100%;
+    height: 250px;
+}
+
+.boton_g {
+font-size:18px;
+background-color:white;
+
+}
+
+
+
+
+.fondo {
+    background-color: #ffffff;
+    color: white;
+    border-radius: 10px;
+}
+
+.texto {
+    font-family:Arial;
+    color:black;
+}
+
+
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #777;
+    border-color: #fff
+}
+
+
+.dropdown-nav {
+    $green: #91d36b
+    $orange: #fc9b1b
+    $lightGrey: #999 $grey: #444 $darkGrey: #333 * margin: 0 padding: 0 box-sizing: border-box .menu display: flex justify-content: center align-items: center width: 95% margin: 0 auto font-family: 'Orbitron', sans-serif ol display: flex flex-wrap: wrap align-items: center justify-content: center width: 100% margin: 0 auto padding: .5em 0 list-style: none .menu-item background: $grey padding: 1em .5em position: relative border-bottom: 5px solid $lightGrey margin: 0 .1em transition: border-bottom .23s ease-in-out, background .23s linear cursor: pointer min-width: 8em text-align: center &[aria-haspopup="true"] border-bottom-color: $orange &:hover, &:focus-within border-bottom-color: $green background: $darkGrey .sub-menu, .sub-menu:hover visibility: visible opacity: 1 display: flex .sub-menu flex-direction: column align-items: flex-start position: absolute left: 0 margin-top: 1em visibility: hidden display: none opacity: 0 .menu-item margin: .1em 0 padding: 1em width: 10em text-align: center z-index: 2 a color: #fff text-decoration: none text-transform: uppercase &:focus outline: none @media (max-width: 690px) .menu width: 95% font-size: 16px .menu-item margin: .1em &:nth-child(1) order: 0 &:nth-child(2) order: 1 &:nth-child(3) order: 3 &:nth-child(4) order: 4 &:nth-child(5) order: 2 @media (max-width: 480px) .menu font-size: 12px
+}

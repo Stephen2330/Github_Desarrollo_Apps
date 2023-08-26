@@ -1,0 +1,36 @@
+﻿@model Ventas_Vehiculos.Models.TBL_Capacidad
+
+@{
+    ViewBag.Title = "Detalles capacidad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="titulo_details">@ViewBag.Title</h2>
+
+<div>
+	<hr />
+	<dl class="dl-horizontal letra_tabla letra_search">
+		<dt class="titulo_details_tabla">
+			Capacidad
+		</dt>
+
+		<dd>
+			
+				@Html.DisplayFor(model => model.TC_Descripcion)
+			
+		</dd>
+
+	</dl>
+</div>
+<p>
+	<a class="btn btn-secondary editar btn-separator" href="@Url.Action("Edit","Capacidades",  new { id = Model.TN_IdCapacidad } )">
+		<i class="fa-solid fa-pen-to-square">
+
+		</i>
+		
+	</a>
+
+	<a class="btn btn-secondary estilo_boton_lista btn-separator" href="@Url.Action("Index", "Capacidades")">
+		<i class="fa fa-undo"></i>
+		
+	</a>
+</p>

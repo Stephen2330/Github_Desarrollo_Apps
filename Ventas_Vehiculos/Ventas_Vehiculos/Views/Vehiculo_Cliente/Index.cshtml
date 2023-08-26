@@ -1,0 +1,210 @@
+﻿@model IEnumerable<Ventas_Vehiculos.Models.TBL_Vehiculo>
+
+@{
+	ViewBag.Title = "Vehículos";
+	Layout = "~/Views/Shared/_LayoutCliente.cshtml";
+}
+
+<h2 class="titulo_index">@ViewBag.Title</h2>
+<div class="form-group letra_search">
+	@Html.Label("Filtrar vehículo por marca", new { @for = "marcaFiltro" })
+	@Html.DropDownList("marca", ViewBag.MarcasSelect as SelectList, "Todas las marcas", new { @id = "marcaFiltro", @class = "form-control" })
+	<button type="submit" class="btn btn-secondary btn_search btn-separator " id="btnFiltrar">
+		<i class="fa-solid fa-search"></i>
+	</button>
+	<a href="@Url.Action("Index", "Vehiculo_Cliente")" class="btn btn-secondary btn_clean ">
+		<i class="fa-solid fa-eraser"></i>
+	</a>
+</div>
+
+
+<div class="cuadro_tabla">
+	<table class="table letra_tabla table-bordered table-hover">
+		<tr class="titulo_encabezado_tabla">
+			<th class="titulo_encabezado_tabla">
+				Marca
+			</th>
+			<th class="titulo_encabezado_tabla">
+				Modelo
+			</th>
+			<th class="titulo_encabezado_tabla">
+				Capacidad
+			</th>
+			<th class="titulo_encabezado_tabla">
+				Color
+			</th>
+			<th class="titulo_encabezado_tabla">
+				Año
+			</th>
+			<th class="titulo_encabezado_tabla">
+				Motor
+			</th>
+			<th class="titulo_encabezado_tabla">
+				Diseño
+			</th>
+			<th class="titulo_encabezado_tabla" colspan="2">
+				Operaciones
+			</th>
+		</tr>
+		<tbody class="table letra_tabla table-bordered table-hover">
+
+			@foreach (var item in Model)
+			{
+				<tr class="datos_tabla table-hover">
+
+					<td>
+
+						@Html.DisplayFor(modelItem => item.TBL_Marca.TC_Descripcion)
+
+					</td>
+					<td>
+
+						@Html.DisplayFor(modelItem => item.TBL_Modelo.TC_Descripcion)
+
+					</td>
+					<td>
+
+						@Html.DisplayFor(modelItem => item.TBL_Capacidad.TC_Descripcion)
+
+					</td>
+					<td>
+
+						@Html.DisplayFor(modelItem => item.TBL_Color.TC_Descripcion)
+
+					</td>
+					<td>
+
+						@Html.DisplayFor(modelItem => item.TBL_Anno.TC_Descripcion)
+
+					</td>
+					<td>
+
+						@Html.DisplayFor(modelItem => item.TBL_Motor.TC_Descripcion)
+
+					</td>
+					<td>
+
+						@Html.DisplayFor(modelItem => item.TBL_Disenno.TC_Descripcion)
+
+					</td>
+
+
+					<td>
+
+						<a class="btn btn-secondary detallado btn-separator" href="@Url.Action("Details","Vehiculo_Cliente", new { id = item.TN_IdVehiculo })">
+							<i class="fa-solid fa-circle-info"></i>
+
+						</a>
+
+					</td>
+
+
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+
+
+<!-- Resto del código anterior -->
+@if (ViewBag.CurrentFilter != null && Model.Any())
+{
+
+}
+
+@if (Model.Any())
+{
+	<div class="current-page-info datos_paginacion">
+		Página @ViewBag.PageNumber de @ViewBag.totalPages
+	</div>
+}
+
+<div class="pagination-container datos_paginacion">
+	@if (Model.Any())
+	{
+		<ul class="pagination">
+			@if (ViewBag.PageNumber > 1)
+			{
+				if (ViewBag.CurrentFilter != null)
+				{
+					<li>
+						<a href="@Url.Action("Index", new { page = ViewBag.PageNumber - 1, searchText = ViewBag.CurrentFilter })">
+							<i class="fa-solid fa-angle-left"></i>
+						</a>
+					</li>
+				}
+				else
+				{
+					<li>
+						<a href="@Url.Action("Index", new { page = ViewBag.PageNumber - 1 })">
+							<i class="fa-solid fa-angle-left"></i>
+						</a>
+					</li>
+				}
+			}
+			else
+			{
+				if (ViewBag.CurrentFilter != null)
+				{
+					<li>
+						<a href="@Url.Action("Index", new { page = ViewBag.totalPages, searchText = ViewBag.CurrentFilter })">
+							<i class="fa-solid fa-angle-left"></i>
+						</a>
+					</li>
+				}
+				else
+				{
+					<li>
+						<a href="@Url.Action("Index", new { page = ViewBag.totalPages })">
+							<i class="fa-solid fa-angle-left"></i>
+						</a>
+					</li>
+				}
+			}
+
+			<li>
+				<a href="@Url.Action("Index", new { page = 1, searchText = ViewBag.CurrentFilter })">
+					<i class="fas fa-home"></i>
+				</a>
+			</li>
+
+			@if (ViewBag.PageNumber < ViewBag.totalPages)
+			{
+				<li>
+					<a href="@Url.Action("Index", new { page = ViewBag.PageNumber + 1, searchText = ViewBag.CurrentFilter })">
+						<i class="fa-solid fa-angle-right"></i>
+					</a>
+				</li>
+			}
+			else
+			{
+				<li>
+					<a href="@Url.Action("Index", new { page = 1, searchText = ViewBag.CurrentFilter })">
+						<i class="fa-solid fa-angle-right"></i>
+					</a>
+				</li>
+			}
+		</ul>
+	}
+</div>
+
+<div >
+	<a class="estilo_boton_lista btn btn-secondary" href="@Url.Action("Index", "Home_Cliente")">
+		<i class="fa fa-undo"></i>
+	</a>
+
+
+</div>
+
+
+
+@section Scripts {
+	<script>
+        $(document).ready(function () {
+            $("#btnFiltrar").click(function () {
+                var marcaSeleccionada = $("#marcaFiltro").val();
+                window.location.href = "@Url.Action("Index", "Vehiculo_Cliente")?marca=" + marcaSeleccionada;
+            });
+        });
+	</script>
+}

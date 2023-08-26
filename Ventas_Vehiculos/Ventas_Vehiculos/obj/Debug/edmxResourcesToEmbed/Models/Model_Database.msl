@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_VehiculosModelStoreContainer" CdmEntityContainer="DB_VehiculosEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DB_VehiculosModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Anno">
+      <EntityTypeMapping TypeName="DB_VehiculosModel.TBL_Anno">
+        <MappingFragment StoreEntitySet="TBL_Anno">
+          <ScalarProperty Name="TN_IdAnno" ColumnName="TN_IdAnno" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Capacidad">
+      <EntityTypeMapping TypeName="DB_VehiculosModel.TBL_Capacidad">
+        <MappingFragment StoreEntitySet="TBL_Capacidad">
+          <ScalarProperty Name="TN_IdCapacidad" ColumnName="TN_IdCapacidad" />
+          <ScalarProperty Name="TC_Descripcion" ColumnName="TC_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Color">
+      <EntityTypeMapping TypeName="DB_VehiculosModel.TBL_Color">
+        <MappingFragment StoreEntitySet="TBL_Color">
+          <ScalarProperty Name="TN_IdColor" ColumnName="TN_IdColor" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Compra">
+      <EntityTypeMapping TypeName="DB_VehiculosModel.TBL_Compra">
+        <MappingFragment StoreEntitySet="TBL_Compra">
+          <ScalarProperty Name="TN_IdCompra" ColumnName="TN_IdCompra" />
+          <ScalarProperty Name="TN_IdVehiculo" ColumnName="TN_IdVehiculo" />
+          <ScalarProperty Name="TN_Cantidad" ColumnName="TN_Cantidad" />
+          <ScalarProperty Name="TN_IdUsuario" ColumnName="TN_IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Disenno">
+      <EntityTypeMapping TypeName="DB_VehiculosModel.TBL_Disenno">
+        <MappingFragment StoreEntitySet="TBL_Disenno">
+          <ScalarProperty Name="TN_IdDisenno" ColumnName="TN_IdDisenno" />
+          <ScalarProperty Name="TC_Descripcion" ColumnName="TC_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Factura">
+      <EntityTypeMapping TypeName="DB_VehiculosModel.TBL_Factura">
+        <MappingFragment StoreEntitySet="TBL_Factura">
+          <ScalarProperty Name="TN_IdFactura" ColumnName="TN_IdFactura" />
+          <ScalarProperty Name="TN_IdVehiculo" ColumnName="TN_IdVehiculo" />
+          <ScalarProperty Name="TN_IdUsuario" ColumnName="TN_IdUsuario" />
+          <ScalarProperty Name="TN_IdCompra" ColumnName="TN_IdCompra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Marca">
+      <EntityTypeMapping TypeName="DB_VehiculosModel.TBL_Marca">
+        <MappingFragment StoreEntitySet="TBL_Marca">
+          <ScalarProperty Name="TN_IdMarca" ColumnName="TN_IdMarca" />
+          <ScalarProperty Name="TC_Descripcion" ColumnName="TC_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Modelo">
+      <EntityTypeMapping TypeName="DB_VehiculosModel.TBL_Modelo">
+        <MappingFragment StoreEntitySet="TBL_Modelo">
+          <ScalarProperty Name="TN_IdModelo" ColumnName="TN_IdModelo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Motor">
+      <EntityTypeMapping TypeName="DB_VehiculosModel.TBL_Motor">
+        <MappingFragment StoreEntitySet="TBL_Motor">
+          <ScalarProperty Name="TN_IdMotor" ColumnName="TN_IdMotor" />
+          <ScalarProperty Name="TC_Descripcion" ColumnName="TC_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Usuario">
+      <EntityTypeMapping TypeName="DB_VehiculosModel.TBL_Usuario">
+        <MappingFragment StoreEntitySet="TBL_Usuario">
+          <ScalarProperty Name="TN_IdUsuario" ColumnName="TN_IdUsuario" />
+          <ScalarProperty Name="TC_TipoUsuario" ColumnName="TC_TipoUsuario" />
+          <ScalarProperty Name="TN_Cedula" ColumnName="TN_Cedula" />
+          <ScalarProperty Name="TC_Nombre" ColumnName="TC_Nombre" />
+          <ScalarProperty Name="TC_PrimerApellido" ColumnName="TC_PrimerApellido" />
+          <ScalarProperty Name="TC_SegundoApellido" ColumnName="TC_SegundoApellido" />
+          <ScalarProperty Name="TC_Correo" ColumnName="TC_Correo" />
+          <ScalarProperty Name="TC_Direccion" ColumnName="TC_Direccion" />
+          <ScalarProperty Name="TC_Clave" ColumnName="TC_Clave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Vehiculo">
+      <EntityTypeMapping TypeName="DB_VehiculosModel.TBL_Vehiculo">
+        <MappingFragment StoreEntitySet="TBL_Vehiculo">
+          <ScalarProperty Name="TN_IdVehiculo" ColumnName="TN_IdVehiculo" />
+          <ScalarProperty Name="TN_IdMarca" ColumnName="TN_IdMarca" />
+          <ScalarProperty Name="TN_IdModelo" ColumnName="TN_IdModelo" />
+          <ScalarProperty Name="TN_IdColor" ColumnName="TN_IdColor" />
+          <ScalarProperty Name="TN_IdAnno" ColumnName="TN_IdAnno" />
+          <ScalarProperty Name="TN_IdCapacidad" ColumnName="TN_IdCapacidad" />
+          <ScalarProperty Name="TN_IdMotor" ColumnName="TN_IdMotor" />
+          <ScalarProperty Name="TN_IdDisenno" ColumnName="TN_IdDisenno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
